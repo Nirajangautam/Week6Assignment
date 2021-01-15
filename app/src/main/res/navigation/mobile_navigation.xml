@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_add_student"
-        android:name="com.example.week6assignment.ui.dashboard.DashboardFragment"
+        android:name="com.example.week6assignment.ui.AddStudent.AddStudentFragment"
         android:label="@string/title_add_student"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_addstudent" />
 
     <fragment
         android:id="@+id/navigation_about_us"
-        android:name="com.example.week6assignment.ui.notifications.NotificationsFragment"
+        android:name="com.example.week6assignment.ui.About.AboutFragment"
         android:label="@string/title_about_us"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_about" />
 </navigation>

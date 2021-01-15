@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="50dp"
     tools:context=".LoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/softwarica"
+        android:layout_margin="5dp"/>
+
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number,username,or email"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/ivLogo"
+        />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/etUsername"
+        />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:text="Login"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        />
+
+    <Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:text="Log in with Facebook"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:layout_centerInParent="true"
+        />
+
+    <TextView
+        android:id="@+id/tvFp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password?"
+        android:layout_below="@id/btnFacebook"
+        android:layout_margin="5dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/tvAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:layout_below="@id/tvFp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_margin="5dp"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_below="@+id/tvAccount"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>

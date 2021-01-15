@@ -1,4 +1,4 @@
-package com.example.week6assignment.ui.dashboard
+package com.example.week6assignment.ui.AddStudent
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.week6assignment.R
 import com.example.week6assignment.model.Database
 import com.example.week6assignment.model.Student
 
-class DashboardFragment : Fragment() {
+class AddStudentFragment : Fragment() {
     lateinit var etName: EditText
     lateinit var etAge: EditText
     lateinit var etAddress: EditText
@@ -34,7 +32,7 @@ class DashboardFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        root = inflater.inflate(R.layout.fragment_addstudent, container, false)
         binder()
 
         btnSubmit.setOnClickListener {
