@@ -21,11 +21,13 @@ class DashboardFragment : Fragment() {
     lateinit var rdoMale:RadioButton
     lateinit var rdoFemale:RadioButton
     lateinit var rdoOthers:RadioButton
+    var flag = false
+
+
 
     lateinit var root:View
     private var gender=""
     private val db = Database()
-    private val studentData = db.returnStudent()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -36,16 +38,19 @@ class DashboardFragment : Fragment() {
         binder()
 
         btnSubmit.setOnClickListener {
-            val genId = rdoGroup.checkedRadioButtonId
-            val selectedGender : RadioButton = root.findViewById(genId)
-            gender= selectedGender.text.toString()
 
+
+       validateInput()
+
+        if(!flag) {
             validate()
-
             Toast.makeText(
                     context, "Student Added", Toast.LENGTH_LONG
             ).show()
-            println(studentData[0].toString())
+        }
+
+
+
         }
         return root
     }
@@ -88,5 +93,41 @@ class DashboardFragment : Fragment() {
                     gender
             ))
         }
+    }
+    fun validateInput() {
+
+        val genId = rdoGroup.checkedRadioButtonId
+        if (genId != -1) {
+            val selectedGender: RadioButton = root.findViewById(genId)
+            gender = selectedGender.text.toString()
+        }
+
+        flag=false
+        when {
+            etName.text.toString() == "" -> {
+                etName.error = "This field is Mandatory"
+                etName.requestFocus()
+                flag = true
+
+            }
+            etAddress.text.toString() == "" -> {
+                etAddress.error = "This field is Mandatory"
+                etAddress.requestFocus()
+                flag = true
+            }
+            etAge.text.toString() == "" -> {
+                etAge.error = "This field is Mandatory"
+                flag =true
+            }
+            genId == -1 -> {
+                Toast.makeText(context, "Please select gender", Toast.LENGTH_SHORT).show()
+                flag = true
+            }
+            else->{
+                flag=false
+            }
+
+        }
+
     }
 }
