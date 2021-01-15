@@ -47,9 +47,7 @@ class studentAdapter(val StudentList:MutableList<Student>, val context: Context)
         val btnDelete = itemView.findViewById(R.id.imgBtn) as ImageButton
 
     }
-    fun test(){
 
-    }
 }
 
 
