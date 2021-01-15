@@ -17,7 +17,7 @@ import com.example.week6assignment.model.Database
 import com.example.week6assignment.model.Student
 
 class HomeFragment : Fragment() {
-    private lateinit var details:RecyclerView
+    private lateinit var details: RecyclerView
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
