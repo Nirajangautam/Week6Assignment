@@ -45,6 +45,10 @@ class AddStudentFragment : Fragment() {
             Toast.makeText(
                     context, "Student Added", Toast.LENGTH_LONG
             ).show()
+           etName.setText("")
+            etAge.setText("")
+            etAddress.setText("")
+
         }
 
 
